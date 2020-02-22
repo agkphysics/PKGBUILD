@@ -1,0 +1,20 @@
+pkgbase = labelimg
+	pkgdesc = A graphical image annotation tool.
+	pkgver = 1.8.3
+	pkgrel = 1
+	url = https://github.com/tzutalin/labelImg
+	arch = any
+	license = MIT
+	depends = python-lxml
+	depends = python-pyqt5
+	source = labelImg-1.8.3.tar.gz::https://github.com/tzutalin/labelImg/archive/v1.8.3.tar.gz
+	source = labelimg.desktop
+	source = labelimg
+	source = 0001-fix-version-import.patch
+	sha256sums = 13e5a7bedebf0e3474b36fdc8322af1845cd3e8b4d03f99e55e993a3d7876ef5
+	sha256sums = 8fda55ba5e3360801e3f53d60fac47b880a65a1500367d517814589fafd26833
+	sha256sums = 0f85aa6641f3454ef1b6658b2ce4f1de93a6ddfb46f9bfc5212f474926da2ab2
+	sha256sums = ed20755134785773ea7fdfdbf393216f215295980a1960f8096cb9bde6a224bb
+
+pkgname = labelimg
+
