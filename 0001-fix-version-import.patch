@@ -1,0 +1,12 @@
+diff --git a/labelImg.py b/labelImg.py
+index 6e0e03a..c52ebb5 100755
+--- a/labelImg.py
++++ b/labelImg.py
+@@ -26,6 +26,7 @@ except ImportError:
+     from PyQt4.QtGui import *
+     from PyQt4.QtCore import *
+ 
++from libs import __version__
+ from libs.resources import *
+ from libs.constants import *
+ from libs.utils import *

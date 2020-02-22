@@ -1,6 +1,6 @@
 # Maintainer: Aaron Keesing <agkphysics at gmail dot com>
 pkgname=labelimg
-pkgver=1.8.1
+pkgver=1.8.3
 pkgrel=1
 pkgdesc="A graphical image annotation tool."
 arch=('any')
@@ -9,10 +9,17 @@ license=('MIT')
 depends=('python-lxml' 'python-pyqt5')
 source=("labelImg-${pkgver}.tar.gz::https://github.com/tzutalin/labelImg/archive/v${pkgver}.tar.gz"
         "$pkgname.desktop"
-        "$pkgname")
-sha256sums=('8a4ce1c47e87e4a2043a78511db72f5f98a83a21453ffd4797c1dbbceebc56ad'
-            '69bf1d7f5deddad7a2a714e055f2c8a3041fd21aa59f71fc80e0cdae2fcf7f40'
-            '0f85aa6641f3454ef1b6658b2ce4f1de93a6ddfb46f9bfc5212f474926da2ab2')
+        "$pkgname"
+        "0001-fix-version-import.patch")
+sha256sums=('13e5a7bedebf0e3474b36fdc8322af1845cd3e8b4d03f99e55e993a3d7876ef5'
+            '8fda55ba5e3360801e3f53d60fac47b880a65a1500367d517814589fafd26833'
+            '0f85aa6641f3454ef1b6658b2ce4f1de93a6ddfb46f9bfc5212f474926da2ab2'
+            'ed20755134785773ea7fdfdbf393216f215295980a1960f8096cb9bde6a224bb')
+
+prepare() {
+  cd "$srcdir/labelImg-$pkgver"
+  patch -Np1 <"$srcdir/0001-fix-version-import.patch"
+}
 
 build() {
   cd "$srcdir/labelImg-$pkgver"
@@ -21,19 +28,20 @@ build() {
 
 check() {
   cd "$srcdir/labelImg-$pkgver"
-  make testpy3
+  LC_ALL=C make testpy3
 }
 
 package() {
   # Install executable and resources
   install -Dm755 "$srcdir/$pkgname" "$pkgdir/usr/bin/$pkgname"
   install -Dm755 "$srcdir/labelImg-$pkgver/labelImg.py" "$pkgdir/usr/lib/$pkgname/labelImg.py"
-  install -Dm644 "$srcdir/labelImg-$pkgver/resources.py" "$pkgdir/usr/lib/$pkgname/resources.py"
 
   # Install required library files
+  install -dm755 "$pkgdir/usr/lib/$pkgname/libs"
   install -Dm644 "$srcdir/labelImg-$pkgver/libs/"*.py "$pkgdir/usr/lib/$pkgname/libs"
 
   # Install data dir
+  install -dm755 "$pkgdir/usr/lib/$pkgname/data"
   install -Dm644 "$srcdir/labelImg-$pkgver/data/"* "$pkgdir/usr/lib/$pkgname/data"
 
   # Install icon
