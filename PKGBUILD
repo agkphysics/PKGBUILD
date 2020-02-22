@@ -10,6 +10,7 @@ license=('MIT')
 provides=("$_pkgname")
 conflicts=("$_pkgname")
 depends=('python-lxml' 'python-pyqt5')
+makedepends=('git')
 source=("git+https://github.com/tzutalin/labelImg.git"
         "$_pkgname.desktop"
         "$_pkgname")
