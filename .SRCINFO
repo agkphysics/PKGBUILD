@@ -1,6 +1,6 @@
 pkgbase = zotero
 	pkgdesc = A free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
-	pkgver = 6.0.37
+	pkgver = 7.0.0
 	pkgrel = 1
 	url = https://github.com/zotero/zotero
 	arch = x86_64
@@ -8,6 +8,7 @@ pkgbase = zotero
 	license = AGPL3
 	makedepends = npm
 	makedepends = git
+	makedepends = git-lfs
 	makedepends = zip
 	makedepends = unzip
 	makedepends = perl
@@ -21,25 +22,21 @@ pkgbase = zotero
 	depends = nss
 	depends = libxt
 	source = zotero.desktop
-	source = zotero-client::git+https://github.com/zotero/zotero.git#tag=ab6e0a7d3436062c3787bf22fc212b002ce0fb04
-	source = zotero-build::git+https://github.com/zotero/zotero-build.git#tag=5cec38cd40361d939e32eb0b6e0fd18ac7b78a56
-	source = zotero-standalone-build::git+https://github.com/zotero/zotero-standalone-build.git#tag=6.0.37
+	source = zotero-client::git+https://github.com/zotero/zotero.git#tag=fd9a07ffe3f90c13140cd54e9ba0ea89cab2e2f8
 	source = zotero-translators::git+https://github.com/zotero/translators.git
 	source = zotero-styles::git+https://github.com/zotero/bundled-styles.git
 	source = zotero-pdf-worker::git+https://github.com/zotero/pdf-worker.git
 	source = zotero-note-editor::git+https://github.com/zotero/note-editor.git
-	source = zotero-pdf-reader::git+https://github.com/zotero/pdf-reader.git
+	source = zotero-reader::git+https://github.com/zotero/reader.git
 	source = zotero-schema::git+https://github.com/zotero/zotero-schema.git
 	source = zotero-SingleFile::git+https://github.com/gildas-lormeau/SingleFile.git
 	source = zotero-utilities::git+https://github.com/zotero/utilities.git
 	source = zotero-translate::git+https://github.com/zotero/translate.git
 	source = zotero-csl::git+https://github.com/citation-style-language/locales.git
-	source = zotero-transfw::git+https://github.com/egh/zotero-transfw.git
 	source = zotero-libreoffice-integration::git+https://github.com/zotero/zotero-libreoffice-integration.git
 	source = zotero-pdf-js::git+https://github.com/zotero/pdf.js.git
+	source = zotero-epub-js::git+https://github.com/zotero/epub.js.git
 	sha256sums = eab76db7a56a4d9aaa17baaf240b82fcf57944a4ddf8ef1b58cc64182426cedc
-	sha256sums = SKIP
-	sha256sums = SKIP
 	sha256sums = SKIP
 	sha256sums = SKIP
 	sha256sums = SKIP
