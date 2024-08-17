@@ -6,7 +6,7 @@ pkgrel=1
 pkgdesc="A free, easy-to-use tool to help you collect, organize, cite, and share your research sources."
 arch=('x86_64' 'i686')
 url="https://github.com/zotero/zotero"
-license=('AGPL3')
+license=('AGPL-3.0-or-later')
 depends=('dbus-glib' 'gtk3' 'nss' 'libxt')
 makedepends=('npm' 'git' 'git-lfs' 'zip' 'unzip' 'perl' 'python>=3' 'curl' 'wget' 'rsync' 'nodejs')
 _tag=fd9a07ffe3f90c13140cd54e9ba0ea89cab2e2f8  # git rev-parse $pkgver
