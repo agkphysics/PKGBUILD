@@ -105,6 +105,7 @@ package() {
   install -Dm644 "$pkgdir/usr/lib/zotero/icons/icon32.png" "$pkgdir/usr/share/icons/hicolor/32x32/apps/zotero.png"
   install -Dm644 "$pkgdir/usr/lib/zotero/icons/icon64.png" "$pkgdir/usr/share/icons/hicolor/64x64/apps/zotero.png"
   install -Dm644 "$pkgdir/usr/lib/zotero/icons/icon128.png" "$pkgdir/usr/share/icons/hicolor/128x128/apps/zotero.png"
+  install -Dm644 "$pkgdir/usr/lib/zotero/icons/symbolic.svg" "$pkgdir/usr/share/icons/hicolor/symbolic/apps/zotero-symbolic.svg"
 
   # Close shell when launching
   sed -i -r 's:^("\$CALLDIR/zotero-bin" -app "\$CALLDIR/application.ini" "\$@"):exec \1:' "$pkgdir/usr/lib/zotero/zotero"
